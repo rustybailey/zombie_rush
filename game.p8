@@ -68,7 +68,7 @@ player = {
 		-- y velocity
 		if self:grounded() then
 			if (btnp(4)) then
-				self.dy=-8
+				self.dy=-6
 			else
 				self.dy = 0
 				-- fix position
@@ -152,10 +152,12 @@ baddie = {
 	mirror = false,
 	alive = true,
 	update = function(self)
-		if (self.alive) then
+		if (self.alive and sword.visible) then
 			stabbed = test_collision(self, sword)
 			self.alive = not stabbed
 		end
+
+		self.x-=.25
 	end,
 	draw = function(self)
 	  if (self.alive) then
