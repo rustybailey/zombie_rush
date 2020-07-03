@@ -51,10 +51,11 @@ player = {
     self.dx += self.ddx
 
     -- limit max speed
-    if self.dx > 3 then
-      self.dx = 3
-    elseif self.dx < -3 then
-      self.dx = -3
+    local max_speed = 1
+    if self.dx > max_speed then
+      self.dx = max_speed
+    elseif self.dx < -max_speed then
+      self.dx = -max_speed
     end
 
     -- drag
