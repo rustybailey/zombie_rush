@@ -205,7 +205,7 @@ function add_baddie()
 	if direction == 1 then
 		x = screen_width + 10
 	end
-	add(baddies, make_baddie(x, flr(rnd(1.2)) + .5))
+	add(baddies, make_baddie(x, .25 + rnd(1.4)))
 end
 
 function _init()
